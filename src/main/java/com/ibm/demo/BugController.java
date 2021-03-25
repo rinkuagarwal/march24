@@ -10,20 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BugController {
 	 @PostMapping("/bug")
-     String createOrder() {
+     String createBug() {
           return "success";
 }
      @GetMapping("/bug")
-     String getOrder() {
+     String getBug() {
      	return "bug created";
      }
   @PutMapping("/bug/{id}")
-  String updateOrder(@PathVariable("id") int bugId){
+  String updateBug(@PathVariable("id") int bugId){
  	 System.out.println(bugId);
  	 return "bug updated";
   }
   @DeleteMapping("/bug/{id}")
-  String deleteOrder(@PathVariable("id") int bugId) {
+  String deleteBug(@PathVariable("id") int bugId) {
  	 System.out.println(bugId);
  	 return "bug delete";
   }
