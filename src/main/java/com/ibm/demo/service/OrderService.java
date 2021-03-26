@@ -2,6 +2,7 @@ package com.ibm.demo.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,16 +19,16 @@ public String createOrder(Order order) {
 	return savedOrder.getId();
 }
 
-public Order getOrder(int orderId) {
+public Optional<Order> getOrder(String orderId) {
 	
-	return new Order();
+	return orderRepository.findById(orderId);
 }
 public List<Order> getOrders(){
-	return new ArrayList<Order>();
+	return orderRepository.findAll();
 }
 
-public void updateOrder(int orderId) {
-	
+public void updateOrder(Order order) {
+	orderRepository.save(order);
 	
 }
 
