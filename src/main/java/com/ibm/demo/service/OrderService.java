@@ -32,9 +32,9 @@ public void updateOrder(Order order) {
 	
 }
 
-public void deleteOrder() {
+public void deleteOrder(String orderId) {
 	
-	System.out.println("order deleted");
+	orderRepository.deleteById(orderId);;
 }
 
 
